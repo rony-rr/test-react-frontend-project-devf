@@ -1,7 +1,13 @@
+/** Import components */
 import { HeaderComponent } from "../Components/Header";
 import { Body } from "../Components/Body";
 import { Footer } from "../Components/Footer";
+
+/** Import src's */
 import logo from "../logo.svg";
+
+/** Import CSS */
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
 
 function App() {
