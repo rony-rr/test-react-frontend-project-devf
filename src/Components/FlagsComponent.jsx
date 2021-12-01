@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Alert, Button } from "reactstrap";
 
 /** Import Components */
 import ItemList from "./ItemList";
 
-export const FlagsTableComponent = () => {
-  const [data, setData] = React.useState(null);
-  const [isAlert, setIsAlert] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
+export const FlagsTableComponent = ({searchKey = "", ...props}) => {
 
-  React.useEffect(() => {
+  const [data, setData] = useState(null);
+  const [isAlert, setIsAlert] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
     setTimeout(() => {
       if (data) setIsAlert(true);
     }, 1500);
@@ -31,6 +32,8 @@ export const FlagsTableComponent = () => {
 
   const keys = data ? Object.keys(data) : null;
   let renderList = keys?.map((key, i) => {
+    let res = data[key].includes(searchKey);
+    if( !res ) return null;
     return <ItemList key={i} country={data[key]} />;
   }) || <></>;
 
