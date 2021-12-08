@@ -5,8 +5,9 @@ import { Alert, Button } from "reactstrap";
 /** Import Components */
 import ItemList from "./ItemList";
 
-export const FlagsTableComponent = ({searchKey = "", ...props}) => {
+import "../Sass/_FlagComponent.scss";
 
+export const FlagsTableComponent = ({ searchKey = "", ...props }) => {
   const [data, setData] = useState(null);
   const [isAlert, setIsAlert] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -33,38 +34,38 @@ export const FlagsTableComponent = ({searchKey = "", ...props}) => {
   const keys = data ? Object.keys(data) : null;
   let renderList = keys?.map((key, i) => {
     let res = data[key].includes(searchKey);
-    if( !res ) return null;
-    return <ItemList key={i} country={data[key]} />;
+    if (!res) return null;
+    return <ItemList country={data[key]} key={`Key_${i}`} />;
   }) || <></>;
 
   if (loading) return <p>Cargando datos...</p>;
-  if (!data)
-    return (
-      <Button color="success" onClick={getData}>
-        GET DATA
-      </Button>
-    );
 
   return (
-    <div
-      style={{
-        maxHeight: "30vh",
-        width: "70%",
-        padding: "20px 100px",
-        overflowY: "scroll",
-      }}
-    >
-      {isAlert && (
-        <div>
-          <Alert color="primary">
-            Hey! Data updated.{" "}
-            <Button color="secondary" onClick={() => setIsAlert(false)}>
-              Close
-            </Button>
-          </Alert>
-        </div>
+    <div className="o-flag__component">
+      {data && (
+        <>
+          {isAlert && (
+            <div>
+              <Alert color="primary">
+                Hey! Data updated.{" "}
+                <Button
+                  className="btn-custom"
+                  color="secondary"
+                  onClick={() => setIsAlert(false)}
+                >
+                  Close
+                </Button>
+              </Alert>
+            </div>
+          )}
+          {renderList}
+        </>
       )}
-      {renderList}
+      {!data && (
+        <Button className="btn-custom" color="success" onClick={getData}>
+          GET DATA
+        </Button>
+      )}
     </div>
   );
 };

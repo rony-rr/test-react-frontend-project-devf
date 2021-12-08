@@ -1,4 +1,4 @@
-$bg-header: #282c34;
+@use "_vars.scss" as *;
 
 .App-header {
   background-color: $bg-header;

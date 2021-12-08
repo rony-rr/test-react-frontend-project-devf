@@ -1,5 +1,8 @@
+@use "_vars.scss" as *;
+
 .search__bar {
-  width: 80%;
-  background-color: black;
-  color: white;
+  margin: 20px 5vw;
+  max-width: 80%;
+  background-color: $bg-header !important;
+  color: $white-color !important;
 }

@@ -1,0 +1,12 @@
+@use "_vars.scss" as *;
+
+.o-flag__component {
+  max-height: 30vh;
+  width: 70%;
+  padding: 20px 100px;
+  overflow-y: scroll;
+
+  .btn-custom {
+    background-color: $bg-header !important;
+  }
+}
