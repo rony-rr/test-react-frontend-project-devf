@@ -10,28 +10,20 @@ export const Body = ({ content, ...props }) => {
   );
 
   useEffect(() => {
-    setRenderItem(
-      <InsideComponent content={content} searchKey={props.searchKey} />
-    );
-  }, [props.searchKey]);
-
-  useEffect(() => {
     setTimeout(() => {
-      setRenderItem(
-        <InsideComponent content={content} searchKey={props.searchKey} />
-      );
+      setRenderItem(<InsideComponent content={content} />);
     }, 1000);
   }, []);
 
   return <aside className="Body-app">{renderItem}</aside>;
 };
 
-const InsideComponent = ({ content, searchKey }) => {
+const InsideComponent = ({ content }) => {
   return (
     <>
       {content}
       <div className="App-separator"></div>
-      <FlagsTableComponent searchKey={searchKey} />
+      <FlagsTableComponent />
     </>
   );
 };

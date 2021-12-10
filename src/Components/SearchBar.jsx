@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { SearchContext } from "../Context/SearchContext";
+
 import { Input } from "reactstrap";
 import "../Sass/_searchbar.scss";
 
 const SearchBar = (props) => {
+  const { setSearchKey } = useContext(SearchContext);
+
   const ChangeValue = (val) => {
-    if (props.ChangeVal) {
-      props.ChangeVal(val);
-    }
+    setSearchKey(val);
   };
 
   return (

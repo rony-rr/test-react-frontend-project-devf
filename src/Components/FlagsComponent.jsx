@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+
+import { SearchContext } from "../Context/SearchContext";
+
 import axios from "axios";
 import { Alert, Button } from "reactstrap";
 
@@ -7,7 +10,9 @@ import ItemList from "./ItemList";
 
 import "../Sass/_FlagComponent.scss";
 
-export const FlagsTableComponent = ({ searchKey = "", ...props }) => {
+export const FlagsTableComponent = (props) => {
+  const { searchKey } = useContext(SearchContext);
+
   const [data, setData] = useState(null);
   const [isAlert, setIsAlert] = useState(false);
   const [loading, setLoading] = useState(false);
