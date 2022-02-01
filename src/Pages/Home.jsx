@@ -28,6 +28,16 @@ export default function Home(props) {
         <HeaderComponent title="ReactJS" />
         <Body content={<SearchBar />} />
         <Footer />
+        <div className="floating--close">
+          <span
+            onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}
+          >
+            Cerrar Sesión
+          </span>
+        </div>
       </div>
     </SearchProvider>
   );

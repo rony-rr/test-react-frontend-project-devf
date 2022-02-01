@@ -1,5 +1,18 @@
-$white-color: #FFF;
-$black-color: #000; 
+$white-color: #fff;
+$black-color: #000;
 $bg-header: #282c34;
 $bg-navbar: #581845;
-$link-navbar-color: #DAF7A6;
+$link-navbar-color: #daf7a6;
+$orange-color: #d84724;
+$purple-color: #a957cd;
+$pink-color: #ff227b;
+$gradient-color: linear-gradient(
+  90deg,
+  $pink-color 0%,
+  $orange-color 33.33%,
+  $bg-navbar 65.63%,
+  $purple-color 100%
+);
+$font-size-title: 40px;
+$font-size-btn: 15px;
+$font-weight-btn: bold;

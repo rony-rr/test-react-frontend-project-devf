@@ -1,0 +1,19 @@
+@use "../../../Sass/_vars.scss" as *;
+
+.level-1 {
+  background: $gradient-color;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: $font-size-title;
+}
+
+.level-2 {
+  color: $orange-color;
+}
+
+.level-3,
+.level-4,
+.level-5,
+.level-6 {
+  color: $bg-header;
+}

@@ -1,0 +1,6 @@
+@use "../../../Sass/_vars.scss" as *;
+
+.btn-custom{
+    font-size: $font-size-btn;
+    font-weight: $font-weight-btn;
+}
