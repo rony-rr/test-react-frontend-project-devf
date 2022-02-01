@@ -56,17 +56,55 @@ import React, { useState, useEffect } from "react";
 
 // export default App;
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+
+/** Import Data */
+import DataIMB from "../Data/IMB.json";
+
 import Title from "../Components/Atoms/Title";
 import ButtonComponent from "../Components/Atoms/Button";
+import CardItemIMB from "../Components/Molecules/CardItemIMB";
 
 export default function App(props) {
+  const [isShow, setIsShow] = useState(false);
+
+  const RenderList = () => {
+    const result =
+      DataIMB?.d?.map((item, i) => {
+        return (
+          <CardItemIMB
+            key={"item_card_imb_" + i}
+            title={item?.l || null}
+            subtitle={item?.q || null}
+            text={item?.s || null}
+          />
+        );
+      }) || null;
+
+    return result;
+  };
+
   return (
     <>
-      <Title title="Hola Chicos" level={1} />
-      <ButtonComponent color="primary" text="Click aquí" />
-      <ButtonComponent color="warning" text="Click aquí" />
-      <ButtonComponent color="dark" text="Click aquí" />
+      <Title title="Lista desde JSON" level={1} />
+      <ButtonComponent
+        color="primary"
+        text={isShow ? "Ocultar lista" : "Visualizar lista"}
+        onClick={() => setIsShow(!isShow)}
+      />
+      <div
+        style={{
+          width: "90%",
+          margin: "20 auto",
+          padding: 100,
+          backgroundColor: "#FDFDFD",
+          borderRadius: 7,
+        }}
+      >
+        {isShow && RenderList()}
+      </div>
     </>
   );
 }
