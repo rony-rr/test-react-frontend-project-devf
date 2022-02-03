@@ -1,0 +1,11 @@
+@use "../../../Sass/_vars.scss" as *;
+
+.carousel__pelis{
+    margin: 0 10vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    border-top: solid 2px $purple-color;
+    border-bottom: solid 2px $purple-color;
+}

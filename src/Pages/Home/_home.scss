@@ -1,0 +1,14 @@
+@use "../../Sass/_vars.scss" as *;
+
+.floating--close {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  background-color: #282c34;
+  color: #fff;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
