@@ -29,6 +29,15 @@ export default function Login(props) {
     <Container className="bg-light border" fluid>
       <Form inline>
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
+          <div className="wrap-image">
+            <img
+              alt="logo page"
+              src="images/reactjs-hooks.png"
+              className="image-avatar-login"
+            />
+          </div>
+        </FormGroup>
+        <FormGroup className="mb-2 me-sm-2 mb-sm-0">
           <Label className="me-sm-2" for="exampleEmail">
             Email
           </Label>
@@ -56,7 +65,9 @@ export default function Login(props) {
         </FormGroup>
 
         <div className="btn--view">
-          <Button color="primary" onClick={() => generateToken()}>Ingresar</Button>
+          <Button color="primary" onClick={() => generateToken()}>
+            Ingresar
+          </Button>
         </div>
       </Form>
     </Container>

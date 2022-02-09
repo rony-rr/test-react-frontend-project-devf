@@ -1,17 +1,33 @@
 @use "../../Sass/_vars.scss" as *;
 
 .bg-light {
-    padding: 30vh 20vw;
-    padding-left: 20vw !important;
-    padding-right: 20vw !important;
-    height: 100vh;
+  padding: 10vh 20vw;
+  padding-left: 20vw !important;
+  padding-right: 20vw !important;
+  height: 100vh;
 
-    .btn--view{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 25px;
+  .btn--view {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+  }
+
+  .wrap-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-avatar-login {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 150px;
+      vertical-align: middle;
+      margin: 5vh auto 5vh;
     }
+  }
 }

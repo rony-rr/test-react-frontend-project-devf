@@ -31,8 +31,8 @@ export default function Home(props) {
   };
 
   return (
-    <>
-      <Title title="Lista desde JSON" level={1} />
+    <div className="wrapp-view">
+      <Title title="Lista de peliculas desde el API" level={1} className="title_home" />
       <ButtonComponent
         color="primary"
         text={isShow ? "Ocultar lista" : "Visualizar lista"}
@@ -50,6 +50,6 @@ export default function Home(props) {
           Cerrar Sesión
         </span>
       </div>
-    </>
+    </div>
   );
 }
