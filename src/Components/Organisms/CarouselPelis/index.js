@@ -5,7 +5,10 @@ import "./_style.scss";
 
 export default function CarouselPelis({ isShow, children, ...props }) {
   const settings = {
+    arrows: true,
     dots: true,
+    // autoplay: true,
+    autoplaySpeed: 1000,
     infinite: true,
     speed: 500,
     slidesToShow: 3,

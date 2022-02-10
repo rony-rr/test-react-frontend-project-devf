@@ -66,6 +66,7 @@ import checkToken from "../utils/useTokenValidate";
 /** Import Pages */
 import Home from "./Home/index";
 import Login from "./Login/index";
+import Single from "./Single";
 
 const StackLogin = () => {
   return (
@@ -82,7 +83,7 @@ const StackNavigator = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/blog" element={<Blog />} /> */}
+        <Route path="/single" element={<Single />} />
       </Routes>
     </Router>
   );

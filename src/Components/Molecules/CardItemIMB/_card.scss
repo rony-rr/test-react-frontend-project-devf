@@ -4,14 +4,43 @@
   margin: 0 25px 20px;
   padding: 10px 15px;
   box-shadow: 9px 9px 7px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   .card__imb--image {
     width: 100%;
-    height: 200px;
+    min-height: 125px;
+    height: 125px;
+    max-height: 125px;
     object-fit: contain;
     border-radius: 7px;
   }
 
   .card__imb--body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .card-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      height: 48px;
+      max-height: 48px;
+    }
+
+    .card-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
   }
 }

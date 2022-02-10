@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 /** Import Data */
 import DataIMB from "../../Data/IMB.json";
 
@@ -11,7 +13,13 @@ import CarouselPelis from "../../Components/Organisms/CarouselPelis";
 import "./_home.scss";
 
 export default function Home(props) {
+  const navigate = useNavigate();
+
   const [isShow, setIsShow] = useState(false);
+
+  const onHandleNavigation = (params) => {
+    navigate("/single", { state: params });
+  };
 
   const RenderList = () => {
     const result =
@@ -23,6 +31,7 @@ export default function Home(props) {
             subtitle={item?.q || null}
             text={item?.s || null}
             image={item?.i?.imageUrl || null}
+            onHandle={() => onHandleNavigation(item)}
           />
         );
       }) || null;
@@ -32,7 +41,11 @@ export default function Home(props) {
 
   return (
     <div className="wrapp-view">
-      <Title title="Lista de peliculas desde el API" level={1} className="title_home" />
+      <Title
+        title="Lista de peliculas desde el API"
+        level={1}
+        className="title_home"
+      />
       <ButtonComponent
         color="primary"
         text={isShow ? "Ocultar lista" : "Visualizar lista"}

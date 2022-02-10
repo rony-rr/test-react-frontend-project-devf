@@ -12,8 +12,20 @@ import ButtonComponent from "../../Atoms/Button";
 
 import "./_card.scss";
 
-export default function CardItemIMB({ title, subtitle, text, image, ...props }) {
+export default function CardItemIMB({
+  title,
+  subtitle,
+  text,
+  image,
+  ...props
+}) {
   if (!title || !text) return null;
+
+  const goToSingle = () => {
+    if (props.onHandle) {
+      props.onHandle();
+    }
+  };
 
   return (
     <Card className="card__imb">
@@ -30,7 +42,11 @@ export default function CardItemIMB({ title, subtitle, text, image, ...props }) 
           {subtitle}
         </CardSubtitle>
         <CardText>{text}</CardText>
-        <ButtonComponent color="primary" text="Click aquí" />
+        <ButtonComponent
+          color="primary"
+          text="Ver más"
+          onClick={() => goToSingle()}
+        />
       </CardBody>
     </Card>
   );

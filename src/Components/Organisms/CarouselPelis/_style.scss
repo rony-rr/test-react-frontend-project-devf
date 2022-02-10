@@ -3,7 +3,18 @@
 .carousel__pelis{
     margin: 0 10vw;
     margin-top: 5vh;
-    padding-top: 8vh;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
     border-top: solid 2px $purple-color;
     border-bottom: solid 2px $purple-color;
+
+    .slick-list{
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+
+    .slick-next, .slick-prev{
+        background-color: $purple-color;
+        border-radius: 75px;
+    }
 }
