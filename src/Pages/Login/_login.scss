@@ -1,10 +1,24 @@
 @use "../../Sass/_vars.scss" as *;
 
-.bg-light {
+.Login--dark {
+  background-color: $dark-bg-color !important;
+}
+
+.Login,
+.Login--dark {
   padding: 10vh 20vw;
   padding-left: 20vw !important;
   padding-right: 20vw !important;
   height: 100vh;
+  position: relative;
+
+  .Login__Input--dark {
+    color: $white-color !important;
+  }
+
+  .Login__Input--light {
+    color: $black-color;
+  }
 
   .btn--view {
     width: 100%;
@@ -29,5 +43,20 @@
       vertical-align: middle;
       margin: 5vh auto 5vh;
     }
+  }
+
+  .Login__darkbtn--primary {
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    background-color: $bg-navbar;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 1vw;
+    color: $white-color;
+    font-weight: 700;
+    cursor: pointer;
   }
 }

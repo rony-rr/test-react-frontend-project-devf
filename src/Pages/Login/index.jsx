@@ -12,6 +12,7 @@ import "./_login.scss";
 export default function Login(props) {
   const [userAccount, setUserAccount] = useState("");
   const [userPass, setUserPass] = useState("");
+  const [darkMode, setDarkMode] = useState(true);
 
   const generateToken = async () => {
     if (
@@ -28,7 +29,10 @@ export default function Login(props) {
   };
 
   return (
-    <Container className="bg-light border" fluid>
+    <Container
+      className={`${darkMode ? "Login--dark" : "Login"} bg-light border`}
+      fluid
+    >
       <Form inline>
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
           <div className="wrap-image">
@@ -43,7 +47,10 @@ export default function Login(props) {
         <FlagJona />
 
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
-          <Label className="me-sm-2" for="exampleEmail">
+          <Label
+            className={`Login__Input--${darkMode ? "dark" : "light"} me-sm-2`}
+            for="exampleEmail"
+          >
             Email
           </Label>
           <Input
@@ -56,7 +63,10 @@ export default function Login(props) {
           />
         </FormGroup>
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
-          <Label className="me-sm-2" for="examplePassword">
+          <Label
+            className={`Login__Input--${darkMode ? "dark" : "light"} me-sm-2`}
+            for="examplePassword"
+          >
             Password
           </Label>
           <Input
@@ -75,6 +85,13 @@ export default function Login(props) {
           </Button>
         </div>
       </Form>
+
+      <span
+        className="Login__darkbtn--primary"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        {darkMode ? "Light" : "Dark"}
+      </span>
     </Container>
   );
 }
