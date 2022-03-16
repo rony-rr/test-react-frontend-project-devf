@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Container, Form, FormGroup, Label, Input, Button } from "reactstrap";
 
+import { FlagJona } from "../../Components/Molecules/Bandera";
+
 /** Import utils */
 import makeToken from "../../utils/useRandomString";
 
@@ -37,6 +39,9 @@ export default function Login(props) {
             />
           </div>
         </FormGroup>
+
+        <FlagJona />
+
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
           <Label className="me-sm-2" for="exampleEmail">
             Email
