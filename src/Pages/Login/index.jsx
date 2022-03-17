@@ -57,7 +57,7 @@ export default function Login(props) {
        </FormGroup>
 
         <FlagJona />
-        ssssssssssssssssssssssss
+        
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
           <Label className="me-sm-2" for="exampleEmail">
             Email
