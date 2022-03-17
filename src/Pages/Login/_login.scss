@@ -1,6 +1,51 @@
 @use "../../Sass/_vars.scss" as *;
 
-.bg-light {
+@mixin backgroundColor($color){
+  background-color: $color
+}
+
+
+.logPage{
+  padding: 10vh 20vw;
+  padding-left: 20vw !important;
+  padding-right: 20vw !important;
+  height: 100vh;
+}
+
+.logPage--dark{
+  @include backgroundColor(black) ;
+}
+
+.logPage--light{
+  @include backgroundColor(white) ;
+}
+
+.logPage__image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logPage__logo{
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 150px;
+      vertical-align: middle;
+      margin: 5vh auto 5vh;
+}
+
+.logPage__button{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+}
+
+/* .bg-light {
   padding: 10vh 20vw;
   padding-left: 20vw !important;
   padding-right: 20vw !important;
@@ -30,4 +75,4 @@
       margin: 5vh auto 5vh;
     }
   }
-}
+} */

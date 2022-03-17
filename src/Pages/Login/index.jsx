@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 import { FlagJona } from "../../Components/Molecules/Bandera";
@@ -12,6 +12,20 @@ import "./_login.scss";
 export default function Login(props) {
   const [userAccount, setUserAccount] = useState("");
   const [userPass, setUserPass] = useState("");
+  const [background, setBackground] = useState(false);
+  const [logPageColor, setLogPageColor] = useState("logPage--light")
+
+  const styles = () =>{
+    setBackground(!background)
+  }
+
+  useEffect(() =>{
+    if (background === true){
+      setLogPageColor("logPage--dark")
+    }else if(background === false){
+      setLogPageColor("logPage--light")
+    }
+  }, [background])
 
   const generateToken = async () => {
     if (
@@ -28,20 +42,22 @@ export default function Login(props) {
   };
 
   return (
-    <Container className="bg-light border" fluid>
+    <Container className={`logPage ${logPageColor} border`} fluid>
+      <Button color="primary" onClick={() => styles()}>Cambiar fondo</Button>
+      
       <Form inline>
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
-          <div className="wrap-image">
+          <div className="logPage__image">
             <img
               alt="logo page"
               src="images/reactjs-hooks.png"
-              className="image-avatar-login"
+              className="logPage__logo"
             />
           </div>
-        </FormGroup>
+       </FormGroup>
 
         <FlagJona />
-
+        ssssssssssssssssssssssss
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
           <Label className="me-sm-2" for="exampleEmail">
             Email
@@ -69,7 +85,7 @@ export default function Login(props) {
           />
         </FormGroup>
 
-        <div className="btn--view">
+        <div className="logPage__button">
           <Button color="primary" onClick={() => generateToken()}>
             Ingresar
           </Button>
